@@ -1,28 +1,27 @@
 function ListNode(val, next) {
-    this.val = (val === undefined ? 0 : val);
-    this.next = (next === undefined ? null : next);
-  }
-  
-  const addTwoNumbers = (l1, l2) => {
-    let dummyHead = new ListNode(0);
-    let currentNode = dummyHead;
-    let carry = 0;
-  
-    while (l1 || l2 || carry) {
+   this.val = val === undefined ? 0 : val;
+   this.next = next === undefined ? null : next;
+}
+
+const addTwoNumbers = (l1, l2) => {
+   let dummyHead = new ListNode(0);
+   let currentNode = dummyHead;
+   let carry = 0;
+
+   while (l1 || l2 || carry) {
       const val1 = l1 ? l1.val : 0;
       const val2 = l2 ? l2.val : 0;
       const sum = val1 + val2 + carry;
-  
+
       carry = Math.floor(sum / 10);
       currentNode.next = new ListNode(sum % 10);
       currentNode = currentNode.next;
-  
+
       if (l1) l1 = l1.next;
       if (l2) l2 = l2.next;
-    }
-  
-    return dummyHead.next;
-  };
-  
+   }
 
-  console.log(ListNode([2,4,3],[5,6,4]))
+   return dummyHead.next;
+};
+
+console.log(ListNode([2, 4, 3], [5, 6, 4]));
