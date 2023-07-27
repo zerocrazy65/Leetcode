@@ -1,3 +1,7 @@
+/**
+ * @param {string} s
+ * @return {string}
+ */
 var longestPalindrome = function (s) {
    if (s.length === 0) return "";
 
@@ -16,9 +20,6 @@ var longestPalindrome = function (s) {
       }
    }
 
-   if (longestPalindrome.length == 1) {
-      return "this is not a palindrome";
-   }
    return longestPalindrome;
 };
 
@@ -27,7 +28,10 @@ const expandCenter = (s, left, right) => {
       left--;
       right++;
    }
+
    return s.slice(left + 1, right);
 };
 
-console.log(longestPalindrome("ceewe"));
+console.log(longestPalindrome("o"));
+
+module.exports = longestPalindrome;
